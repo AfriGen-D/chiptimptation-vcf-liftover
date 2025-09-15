@@ -1,0 +1,28 @@
+# Nextflow
+work/
+.nextflow*
+results/
+test_results/
+
+# Documentation build artifacts
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+docs/node_modules/
+
+# Test data generation
+test_data_generation/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp

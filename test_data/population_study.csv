@@ -1,0 +1,4 @@
+sample_id,vcf_path
+population_20,test_data/population_20samples.vcf.gz
+edge_cases,test_data/edge_cases.vcf.gz
+multiallelic,test_data/multiallelic.vcf.gz
