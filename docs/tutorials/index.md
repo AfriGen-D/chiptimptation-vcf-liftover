@@ -77,7 +77,7 @@ Learn how to choose the right parameters for your data. This tutorial covers:
 
 ```bash
 # Clone the repository
-git clone https://github.com/mamanambiya/chiptimptation-liftover.git
+git clone https://github.com/AfriGen-D/chiptimptation-vcf-liftover.git
 cd chiptimptation-liftover
 
 # Verify Nextflow installation
@@ -111,7 +111,7 @@ If you get stuck during any tutorial:
 
 1. **Check the troubleshooting section** in each tutorial
 2. **Review the [Documentation](/docs/)** for detailed explanations
-3. **Search [GitHub Issues](https://github.com/mamanambiya/chiptimptation-liftover/issues)**
+3. **Search [GitHub Issues](https://github.com/AfriGen-D/chiptimptation-vcf-liftover/issues)**
 4. **Ask for help** on our support channels
 
 ## Tutorial Feedback ​

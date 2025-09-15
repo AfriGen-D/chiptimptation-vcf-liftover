@@ -11,7 +11,7 @@ hero:
       link: /guide/getting-started
     - theme: alt
       text: View on GitHub
-      link: https://github.com/mamanambiya/chiptimptation-liftover
+      link: https://github.com/AfriGen-D/chiptimptation-vcf-liftover
 
 features:
   - icon: 🔄
@@ -40,7 +40,7 @@ Get started with chiptimptation-vcf-liftover in just a few commands:
 
 ```bash
 # Clone the repository
-git clone https://github.com/mamanambiya/chiptimptation-liftover.git
+git clone https://github.com/AfriGen-D/chiptimptation-vcf-liftover.git
 cd chiptimptation-liftover
 
 # Run with your data
@@ -77,6 +77,6 @@ This Nextflow pipeline provides:
 
 ## Support ​
 
-- [GitHub Issues](https://github.com/mamanambiya/chiptimptation-liftover/issues)
+- [GitHub Issues](https://github.com/AfriGen-D/chiptimptation-vcf-liftover/issues)
 - [Helpdesk](https://afrigen-d.org)
 - [AfriGen-D](https://afrigen-d.org)

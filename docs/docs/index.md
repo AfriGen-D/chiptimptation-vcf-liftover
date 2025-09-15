@@ -92,7 +92,7 @@ If you're new to chiptimptation-vcf-liftover documentation:
 
 Found an issue or want to improve the documentation?
 
-- Visit our [GitHub repository](https://github.com/mamanambiya/chiptimptation-liftover)
+- Visit our [GitHub repository](https://github.com/AfriGen-D/chiptimptation-vcf-liftover)
 - Submit issues or suggestions
 - Contact [AfriGen-D](https://afrigen-d.org)
 

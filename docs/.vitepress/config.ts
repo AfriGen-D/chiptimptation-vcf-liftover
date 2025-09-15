@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'chiptimptation-vcf-liftover',
   description: 'A Nextflow pipeline for lifting over VCF files between genome builds using CrossMap',
-  base: '/chiptimptation-liftover/',
+  base: '/chiptimptation-vcf-liftover/',
   ignoreDeadLinks: true,
   lang: 'en-US',
 
@@ -105,7 +105,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/mamanambiya/chiptimptation-liftover' }
+      { icon: 'github', link: 'https://github.com/AfriGen-D/chiptimptation-vcf-liftover' }
     ],
 
     footer: {

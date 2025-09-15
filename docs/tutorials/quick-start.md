@@ -20,8 +20,8 @@ By the end of this tutorial, you'll be able to:
 
 ```bash
 # Clone the repository
-git clone https://github.com/mamanambiya/chiptimptation-liftover.git
-cd chiptimptation-liftover
+git clone https://github.com/AfriGen-D/chiptimptation-vcf-liftover.git
+cd chiptimptation-vcf-liftover
 
 # Verify you're in the right directory
 ls -la

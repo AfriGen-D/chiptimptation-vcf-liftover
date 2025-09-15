@@ -50,6 +50,6 @@ To contribute to the documentation:
 
 ## 🔗 Links
 
-- **Live Documentation**: https://mamanambiya.github.io/chiptimptation-liftover
-- **Repository**: https://github.com/mamanambiya/chiptimptation-liftover
+- **Live Documentation**: <https://afrigen-d.github.io/chiptimptation-vcf-liftover>
+- **Repository**: <https://github.com/AfriGen-D/chiptimptation-vcf-liftover>
 - **VitePress**: https://vitepress.dev

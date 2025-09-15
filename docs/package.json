@@ -23,10 +23,10 @@
   ],
   "author": "Mamana Mbiyavanga",
   "license": "MIT",
-  "homepage": "https://mamanambiya.github.io/chiptimptation-liftover",
+  "homepage": "https://afrigen-d.github.io/chiptimptation-vcf-liftover",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mamanambiya/chiptimptation-liftover.git"
+    "url": "https://github.com/AfriGen-D/chiptimptation-vcf-liftover.git"
   },
   "dependencies": {
     "markdown-it-mathjax3": "^4.3.2"
