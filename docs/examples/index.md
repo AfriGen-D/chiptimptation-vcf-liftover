@@ -25,13 +25,37 @@ gunzip hg19.fa.gz
 samtools faidx hg19.fa
 ```
 
-**Alternative: Use test files for quick examples:**
+**Alternative: Use pre-built test files for quick examples:**
+
+The repository includes pre-built test files that are much smaller and faster for testing.
+
+### Download Test Data ​
+
+If test data is not available locally:
 
 ```bash
-# Generate test reference (much smaller, faster for testing)
-python3 bin/generate_test_reference.py \
-  --regions chr21:1-10000000,chr22:1-20000000 \
-  --output test_data/GRCh38_test_regions.fa
+# Create test data directory
+mkdir -p test_data
+
+# Download essential test files
+wget -P test_data/ https://github.com/AfriGen-D/chiptimptation-vcf-liftover/raw/main/test_data/small_chr22.vcf.gz
+wget -P test_data/ https://github.com/AfriGen-D/chiptimptation-vcf-liftover/raw/main/test_data/GRCh38_test_regions.fa
+wget -P test_data/ https://github.com/AfriGen-D/chiptimptation-vcf-liftover/raw/main/test_data/GRCh38_test_regions.fa.fai
+wget -P test_data/ https://github.com/AfriGen-D/chiptimptation-vcf-liftover/raw/main/test_data/samples.csv
+
+# Verify download
+ls -lh test_data/
+```
+
+### Verify Test Data ​
+
+```bash
+# Check available test files (if repository was cloned)
+ls -lh test_data/*.vcf.gz
+ls -lh test_data/*.fa
+
+# Check available test scenarios
+cat test_data/README.md
 ```
 
 ## Quick Start Examples ​
@@ -72,8 +96,7 @@ nextflow run main.nf \
 # Use built-in test data
 nextflow run main.nf -profile test,singularity
 
-# Generate and use comprehensive test data
-python3 bin/generate_test_data.py
+# Use pre-built test data (included in repository)
 nextflow run main.nf \
     --input test_data/small_chr22.vcf.gz \
     --target_fasta test_data/GRCh38_test_regions.fa \
@@ -107,13 +130,10 @@ nextflow run main.nf \
 
 ### Population Study (20+ Samples) ​
 
-For large-scale studies:
+For large-scale studies using pre-built test data:
 
 ```bash
-# Generate population test data
-python3 bin/generate_test_data.py --population-study
-
-# Run with optimized resources
+# Use pre-built population test data (included in repository)
 nextflow run main.nf \
     --input test_data/population_study.csv \
     --target_fasta hg38.fa \
@@ -319,16 +339,18 @@ nextflow run main.nf \
 nextflow run main.nf -profile test,singularity
 ```
 
-### Generate Test Data ​
+### Use Pre-Built Test Data ​
 
 ```bash
-# Create comprehensive test datasets
-python3 bin/generate_test_data.py --all-scenarios
-python3 bin/generate_test_reference.py --regions chr21:1-10000000,chr22:1-20000000
-
-# Test with generated data
+# Test with pre-built comprehensive datasets (included in repository)
 nextflow run main.nf \
     --input test_data/medium_multi_chr.vcf.gz \
+    --target_fasta test_data/GRCh38_test_regions.fa \
+    -profile singularity
+
+# Test different scenarios
+nextflow run main.nf \
+    --input test_data/edge_cases.vcf.gz \
     --target_fasta test_data/GRCh38_test_regions.fa \
     -profile singularity
 ```
@@ -387,24 +409,59 @@ nextflow run main.nf \
 
 ## Configuration Files ​
 
-### Custom Configuration ​
+### Basic Configuration ​
 
-**nextflow.config:**
+Create a configuration file with your downloaded reference files:
+
+**my_liftover.config:**
+
+```groovy
+params {
+    // Reference files (update these paths to your downloaded files)
+    target_fasta = '/full/path/to/hg38.fa'
+    chain_file = '/full/path/to/chains/hg19ToHg38.over.chain.gz'
+
+    // Output settings
+    outdir = 'results'
+
+    // Processing options
+    validate_output = true
+    min_success_rate = 0.90
+
+    // Resource limits (adjust for your system)
+    max_memory = '64.GB'
+    max_cpus = 8
+    max_time = '24.h'
+}
+```
+
+**Usage:**
+
+```bash
+nextflow run main.nf \
+    --input your_variants.vcf.gz \
+    -c my_liftover.config \
+    -profile singularity
+```
+
+### Advanced Configuration ​
+
+**production.config:**
 
 ```groovy
 params {
     // Input/Output
     input = null
     outdir = 'results'
-    
-    // Reference files
-    target_fasta = null
-    chain_file = 'chains/hg19ToHg38.over.chain.gz'
-    
+
+    // Reference files (update these paths)
+    target_fasta = '/data/references/hg38.fa'
+    chain_file = '/data/chains/hg19ToHg38.over.chain.gz'
+
     // Processing options
     validate_output = true
     min_success_rate = 0.90
-    
+
     // Resource limits
     max_memory = '128.GB'
     max_cpus = 16
@@ -417,7 +474,7 @@ process {
         memory = '16.GB'
         time = '4.h'
     }
-    
+
     withName: SORT_VCF {
         cpus = 2
         memory = '8.GB'

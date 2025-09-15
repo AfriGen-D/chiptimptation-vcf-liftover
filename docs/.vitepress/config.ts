@@ -47,6 +47,7 @@ export default defineConfig({
             { text: 'Reference Overview', link: '/reference/' },
             { text: 'Parameters', link: '/reference/parameters' },
             { text: 'Profiles', link: '/reference/profiles' },
+            { text: 'Test Data', link: '/reference/test-data' },
             { text: 'Configuration', link: '/reference/configuration' }
           ]
         }

@@ -70,29 +70,80 @@ gunzip hg38.fa.gz
 samtools faidx hg38.fa
 ```
 
-**Alternative: Use test reference for quick tutorial:**
+### Configure Pipeline with Downloaded Files ​
+
+Create a configuration file to specify your reference files:
 
 ```bash
-# Generate small test reference genome for faster tutorial
-python3 bin/generate_test_reference.py \
-  --regions chr21:1-10000000,chr22:1-20000000 \
-  --output test_data/GRCh38_test_regions.fa
+# Create custom configuration file
+cat > my_config.config << 'EOF'
+params {
+    // Reference files
+    target_fasta = "/full/path/to/hg38.fa"
+    chain_file = "/full/path/to/chains/hg19ToHg38.over.chain.gz"
+
+    // Output settings
+    outdir = "results"
+
+    // Processing options
+    validate_output = true
+    min_success_rate = 0.90
+}
+EOF
 ```
 
-## Step 3: Generate Test Data ​
+**Or specify files directly in command line:**
 
 ```bash
-# Generate comprehensive test data
-python3 bin/generate_test_data.py
+# Set absolute paths to your downloaded files
+export REFERENCE_FASTA="/full/path/to/hg38.fa"
+export CHAIN_FILE="/full/path/to/chains/hg19ToHg38.over.chain.gz"
+```
 
-# Verify test data was created
+**Alternative: Use pre-built test reference for quick tutorial:**
+
+The repository includes pre-built test reference files that are much smaller and faster for tutorials.
+
+## Step 3: Download Test Data ​
+
+### Option A: Use Repository Test Data (Recommended) ​
+
+If you cloned the repository, comprehensive test data is already included:
+
+```bash
+# Verify test data is available
 ls -lh test_data/*.vcf.gz
+ls -lh test_data/*.fa
+
+# Check test data contents
+cat test_data/README.md
 ```
 
-**What this does:**
-- Creates realistic VCF test files with various scenarios
-- Generates files with different complexity levels
-- Sets up all necessary input files for testing
+### Option B: Download Test Data Separately ​
+
+If you need to download test data separately:
+
+```bash
+# Download test VCF files
+wget -P test_data/ https://github.com/AfriGen-D/chiptimptation-vcf-liftover/raw/main/test_data/small_chr22.vcf.gz
+wget -P test_data/ https://github.com/AfriGen-D/chiptimptation-vcf-liftover/raw/main/test_data/medium_multi_chr.vcf.gz
+
+# Download test reference
+wget -P test_data/ https://github.com/AfriGen-D/chiptimptation-vcf-liftover/raw/main/test_data/GRCh38_test_regions.fa
+wget -P test_data/ https://github.com/AfriGen-D/chiptimptation-vcf-liftover/raw/main/test_data/GRCh38_test_regions.fa.fai
+
+# Download CSV batch files
+wget -P test_data/ https://github.com/AfriGen-D/chiptimptation-vcf-liftover/raw/main/test_data/samples.csv
+```
+
+**Available test files:**
+
+- **Small test VCF**: `test_data/small_chr22.vcf.gz` (chr22 variants, ~1KB)
+- **Test reference**: `test_data/GRCh38_test_regions.fa` (chr21+chr22 regions, ~30MB)
+- **Multiple samples**: Various CSV files for batch processing
+- **Different scenarios**: Edge cases, multiallelic variants, etc.
+
+For complete test data documentation, see [Test Data Reference](/reference/test-data).
 
 ## Step 4: Run Your First Liftover ​
 
@@ -108,11 +159,24 @@ nextflow run main.nf -profile test,singularity \
 ### Option B: With Full Reference ​
 
 ```bash
-# Run with full GRCh38 reference (if downloaded)
+# Method 1: Using configuration file
 nextflow run main.nf \
   --input test_data/small_chr22.vcf.gz \
-  --target_fasta hg38.fa \
-  --chain_file chains/hg19ToHg38.over.chain.gz \
+  -c my_config.config \
+  -profile singularity
+
+# Method 2: Using command line parameters
+nextflow run main.nf \
+  --input test_data/small_chr22.vcf.gz \
+  --target_fasta $REFERENCE_FASTA \
+  --chain_file $CHAIN_FILE \
+  -profile singularity
+
+# Method 3: Using absolute paths directly
+nextflow run main.nf \
+  --input test_data/small_chr22.vcf.gz \
+  --target_fasta /full/path/to/hg38.fa \
+  --chain_file /full/path/to/chains/hg19ToHg38.over.chain.gz \
   -profile singularity
 ```
 
@@ -297,14 +361,44 @@ wget -P chains/ http://hgdownload.cse.ucsc.edu/goldenpath/hg38/liftOver/hg38ToHg
 wget -P chains/ http://hgdownload.cse.ucsc.edu/goldenpath/hg19/liftOver/hg19ToHg18.over.chain.gz
 ```
 
+### Configure for Your Data ​
+
+Update your configuration file with your VCF file:
+
+```bash
+# Update configuration for your data
+cat > production_config.config << 'EOF'
+params {
+    // Your input data
+    input = "/path/to/your_variants.vcf.gz"
+    outdir = "your_results"
+
+    // Reference files (update paths to your downloaded files)
+    target_fasta = "/full/path/to/hg38.fa"
+    chain_file = "/full/path/to/chains/hg19ToHg38.over.chain.gz"
+
+    // Processing options
+    validate_output = true
+    min_success_rate = 0.90
+
+    // Resource limits (adjust based on your system)
+    max_memory = "64.GB"
+    max_cpus = 8
+}
+EOF
+```
+
 ### Run with Your VCF ​
 
 ```bash
-# Replace with your actual VCF file
+# Method 1: Using configuration file (recommended)
+nextflow run main.nf -c production_config.config -profile singularity
+
+# Method 2: Command line parameters
 nextflow run main.nf \
     --input /path/to/your_variants.vcf.gz \
-    --target_fasta hg38.fa \
-    --chain_file chains/hg19ToHg38.over.chain.gz \
+    --target_fasta /full/path/to/hg38.fa \
+    --chain_file /full/path/to/chains/hg19ToHg38.over.chain.gz \
     --outdir your_results \
     -profile singularity
 ```
