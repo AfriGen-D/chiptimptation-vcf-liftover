@@ -45,42 +45,87 @@ docker --version
 - Nextflow ≥ 22.10.1
 - Singularity or Docker available
 
-## Step 2: Generate Test Data ​
+## Step 2: Download Required Files ​
+
+### Download Chain File ​
 
 ```bash
-# Generate comprehensive test data
-python3 bin/generate_test_data.py
+# Download hg19 to hg38 chain file
+wget -P chains/ http://hgdownload.cse.ucsc.edu/goldenpath/hg19/liftOver/hg19ToHg38.over.chain.gz
 
-# Generate test reference genome
+# Verify download
+ls -lh chains/hg19ToHg38.over.chain.gz
+```
+
+### Download Reference Genome ​
+
+```bash
+# Download GRCh38 reference genome (this may take a while - ~3GB)
+wget http://hgdownload.cse.ucsc.edu/goldenpath/hg38/bigZips/hg38.fa.gz
+
+# Extract the reference
+gunzip hg38.fa.gz
+
+# Index the reference (optional but recommended)
+samtools faidx hg38.fa
+```
+
+**Alternative: Use test reference for quick tutorial:**
+
+```bash
+# Generate small test reference genome for faster tutorial
 python3 bin/generate_test_reference.py \
   --regions chr21:1-10000000,chr22:1-20000000 \
   --output test_data/GRCh38_test_regions.fa
 ```
 
-**What this does:**
-- Creates realistic VCF test files with various scenarios
-- Generates a small reference genome for fast testing
-- Sets up all necessary input files
-
-## Step 3: Run Your First Liftover ​
+## Step 3: Generate Test Data ​
 
 ```bash
-# Run the pipeline with test data
+# Generate comprehensive test data
+python3 bin/generate_test_data.py
+
+# Verify test data was created
+ls -lh test_data/*.vcf.gz
+```
+
+**What this does:**
+- Creates realistic VCF test files with various scenarios
+- Generates files with different complexity levels
+- Sets up all necessary input files for testing
+
+## Step 4: Run Your First Liftover ​
+
+### Option A: With Test Reference (Faster) ​
+
+```bash
+# Run the pipeline with test data and test reference
 nextflow run main.nf -profile test,singularity \
   --input test_data/small_chr22.vcf.gz \
   --target_fasta test_data/GRCh38_test_regions.fa
 ```
 
+### Option B: With Full Reference ​
+
+```bash
+# Run with full GRCh38 reference (if downloaded)
+nextflow run main.nf \
+  --input test_data/small_chr22.vcf.gz \
+  --target_fasta hg38.fa \
+  --chain_file chains/hg19ToHg38.over.chain.gz \
+  -profile singularity
+```
+
 **What happens:**
 1. Nextflow downloads required containers
 2. Pipeline validates input files
-3. CrossMap performs coordinate conversion
+3. CrossMap performs coordinate conversion using chain file
 4. Output files are sorted and indexed
 5. Statistics and reports are generated
 
-**Expected runtime:** 2-5 minutes
+**Expected runtime:** 2-5 minutes (test reference) or 5-15 minutes (full reference)
 
-## Step 4: Monitor Progress ​
+## Step 5: Monitor Progress ​
 
 While the pipeline runs, you'll see output like:
 
@@ -101,7 +146,7 @@ CPU hours   : 0.2
 Succeeded   : 5
 ```
 
-## Step 5: Examine Results ​
+## Step 6: Examine Results ​
 
 ### Check Output Directory ​
 
@@ -159,7 +204,7 @@ zcat results/vcf/small_chr22_lifted.vcf.gz | head -20
 zcat results/vcf/small_chr22_lifted.vcf.gz | grep -v "^#" | wc -l
 ```
 
-## Step 6: Understand What Happened ​
+## Step 7: Understand What Happened ​
 
 ### Coordinate Conversion ​
 
@@ -184,7 +229,7 @@ The pipeline automatically:
 - ✅ Created index files for fast access
 - ✅ Generated comprehensive statistics
 
-## Step 7: View the HTML Report ​
+## Step 8: View the HTML Report ​
 
 ```bash
 # Open the interactive report (if you have a browser)
@@ -235,11 +280,40 @@ This is normal for test data! Real genomic data typically achieves >95% success 
 ✅ **Understood basic pipeline workflow**  
 ✅ **Interpreted liftover statistics**  
 
+## Using Your Own Data ​
+
+### Download Production Files ​
+
+For real-world usage, you'll need full reference files:
+
+```bash
+# Download full GRCh38 reference genome (~3GB)
+wget http://hgdownload.cse.ucsc.edu/goldenpath/hg38/bigZips/hg38.fa.gz
+gunzip hg38.fa.gz
+samtools faidx hg38.fa
+
+# Download additional chain files as needed
+wget -P chains/ http://hgdownload.cse.ucsc.edu/goldenpath/hg38/liftOver/hg38ToHg19.over.chain.gz
+wget -P chains/ http://hgdownload.cse.ucsc.edu/goldenpath/hg19/liftOver/hg19ToHg18.over.chain.gz
+```
+
+### Run with Your VCF ​
+
+```bash
+# Replace with your actual VCF file
+nextflow run main.nf \
+    --input /path/to/your_variants.vcf.gz \
+    --target_fasta hg38.fa \
+    --chain_file chains/hg19ToHg38.over.chain.gz \
+    --outdir your_results \
+    -profile singularity
+```
+
 ## Next Steps ​
 
 Now that you've completed your first liftover:
 
-1. **Try with your own data:** Replace test data with your VCF files
+1. **Try with your own data:** Use the commands above with your VCF files
 2. **Learn batch processing:** Try the [Multi-File Tutorial](/tutorials/multi-file-tutorial)
 3. **Optimize parameters:** Explore the [Method Selection Tutorial](/tutorials/method-selection)
 4. **Understand results:** Read the [Understanding Results](/docs/understanding-results) documentation
