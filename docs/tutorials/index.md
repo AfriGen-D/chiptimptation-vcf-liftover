@@ -1,10 +1,10 @@
 # Tutorials ​
 
-Step-by-step tutorials to help you learn chiptimptation-vcf-liftover effectively. These hands-on guides will take you from beginner to advanced user.
+Step-by-step tutorials to help you learn chiptimputation-vcf-liftover effectively. These hands-on guides will take you from beginner to advanced user.
 
 ## Tutorial Overview ​
 
-Our tutorials are designed to provide practical, hands-on experience with chiptimptation-vcf-liftover. Each tutorial includes:
+Our tutorials are designed to provide practical, hands-on experience with chiptimputation-vcf-liftover. Each tutorial includes:
 
 - **Clear objectives** - What you'll learn and accomplish
 - **Prerequisites** - What you need before starting
@@ -17,7 +17,7 @@ Our tutorials are designed to provide practical, hands-on experience with chipti
 ### Quick Start Tutorial (10 minutes) ​
 **Perfect for:** First-time users who want to see results quickly
 
-Learn the basics of running chiptimptation-vcf-liftover with a simple example. This tutorial covers:
+Learn the basics of running chiptimputation-vcf-liftover with a simple example. This tutorial covers:
 - Setting up your environment
 - Running your first liftover
 - Understanding basic output
@@ -77,8 +77,8 @@ Learn how to choose the right parameters for your data. This tutorial covers:
 
 ```bash
 # Clone the repository
-git clone https://github.com/AfriGen-D/chiptimptation-vcf-liftover.git
-cd chiptimptation-liftover
+git clone https://github.com/AfriGen-D/chiptimputation-vcf-liftover.git
+cd chiptimputation-liftover
 
 # Verify Nextflow installation
 nextflow -version
@@ -111,7 +111,7 @@ If you get stuck during any tutorial:
 
 1. **Check the troubleshooting section** in each tutorial
 2. **Review the [Documentation](/docs/)** for detailed explanations
-3. **Search [GitHub Issues](https://github.com/AfriGen-D/chiptimptation-vcf-liftover/issues)**
+3. **Search [GitHub Issues](https://github.com/AfriGen-D/chiptimputation-vcf-liftover/issues)**
 4. **Ask for help** on our support channels
 
 ## Tutorial Feedback ​

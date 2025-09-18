@@ -167,7 +167,7 @@ def generate_summary_report(all_stats, output_dir):
     <!DOCTYPE html>
     <html>
     <head>
-        <title>chiptimptation-vcf-liftover Summary Report</title>
+        <title>chiptimputation-vcf-liftover Summary Report</title>
         <style>
             body {{ font-family: Arial, sans-serif; margin: 40px; }}
             .header {{ background-color: #f0f0f0; padding: 20px; border-radius: 5px; }}
@@ -185,7 +185,7 @@ def generate_summary_report(all_stats, output_dir):
     </head>
     <body>
         <div class="header">
-            <h1>chiptimptation-vcf-liftover Summary Report</h1>
+            <h1>chiptimputation-vcf-liftover Summary Report</h1>
             <p><strong>Generated:</strong> {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</p>
         </div>
         

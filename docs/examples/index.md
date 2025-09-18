@@ -1,6 +1,6 @@
 # Examples ​
 
-Practical examples for running chiptimptation-vcf-liftover in different scenarios, from simple single-file processing to complex multi-sample studies.
+Practical examples for running chiptimputation-vcf-liftover in different scenarios, from simple single-file processing to complex multi-sample studies.
 
 ## Prerequisites ​
 
@@ -38,10 +38,10 @@ If test data is not available locally:
 mkdir -p test_data
 
 # Download essential test files
-wget -P test_data/ https://github.com/AfriGen-D/chiptimptation-vcf-liftover/raw/main/test_data/small_chr22.vcf.gz
-wget -P test_data/ https://github.com/AfriGen-D/chiptimptation-vcf-liftover/raw/main/test_data/GRCh38_test_regions.fa
-wget -P test_data/ https://github.com/AfriGen-D/chiptimptation-vcf-liftover/raw/main/test_data/GRCh38_test_regions.fa.fai
-wget -P test_data/ https://github.com/AfriGen-D/chiptimptation-vcf-liftover/raw/main/test_data/samples.csv
+wget -P test_data/ https://github.com/AfriGen-D/chiptimputation-vcf-liftover/raw/main/test_data/small_chr22.vcf.gz
+wget -P test_data/ https://github.com/AfriGen-D/chiptimputation-vcf-liftover/raw/main/test_data/GRCh38_test_regions.fa
+wget -P test_data/ https://github.com/AfriGen-D/chiptimputation-vcf-liftover/raw/main/test_data/GRCh38_test_regions.fa.fai
+wget -P test_data/ https://github.com/AfriGen-D/chiptimputation-vcf-liftover/raw/main/test_data/samples.csv
 
 # Verify download
 ls -lh test_data/

@@ -1,10 +1,10 @@
 # Test Data Generation ​
 
-Reference documentation for generating and maintaining test datasets for chiptimptation-vcf-liftover development and testing.
+Reference documentation for generating and maintaining test datasets for chiptimputation-vcf-liftover development and testing.
 
 ## Overview ​
 
-The chiptimptation-vcf-liftover pipeline includes comprehensive test data for validation, development, and user tutorials. This documentation covers how test data is generated and maintained.
+The chiptimputation-vcf-liftover pipeline includes comprehensive test data for validation, development, and user tutorials. This documentation covers how test data is generated and maintained.
 
 ## Pre-Built Test Data ​
 

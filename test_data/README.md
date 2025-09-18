@@ -1,6 +1,6 @@
-# Test Data for chiptimptation-vcf-liftover
+# Test Data for chiptimputation-vcf-liftover
 
-This directory contains comprehensive test datasets for validating the chiptimptation-vcf-liftover pipeline.
+This directory contains comprehensive test datasets for validating the chiptimputation-vcf-liftover pipeline.
 
 ## Quick Start
 

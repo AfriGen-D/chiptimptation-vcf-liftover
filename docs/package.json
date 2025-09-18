@@ -1,5 +1,5 @@
 {
-  "name": "chiptimptation-liftover-docs",
+  "name": "chiptimputation-liftover-docs",
   "version": "1.0.0",
   "description": "A Nextflow pipeline for lifting over VCF files between genome builds using CrossMap - Documentation",
   "type": "module",
@@ -23,10 +23,10 @@
   ],
   "author": "Mamana Mbiyavanga",
   "license": "MIT",
-  "homepage": "https://afrigen-d.github.io/chiptimptation-vcf-liftover",
+  "homepage": "https://afrigen-d.github.io/chiptimputation-vcf-liftover",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AfriGen-D/chiptimptation-vcf-liftover.git"
+    "url": "https://github.com/AfriGen-D/chiptimputation-vcf-liftover.git"
   },
   "dependencies": {
     "markdown-it-mathjax3": "^4.3.2"

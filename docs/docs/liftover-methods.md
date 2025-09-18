@@ -4,7 +4,7 @@ Detailed explanation of coordinate conversion methods, CrossMap integration, and
 
 ## Overview ​
 
-chiptimptation-vcf-liftover uses CrossMap to convert genomic coordinates between reference genome builds. This process, called "liftover," translates variant positions from one genome assembly to another while maintaining biological accuracy.
+chiptimputation-vcf-liftover uses CrossMap to convert genomic coordinates between reference genome builds. This process, called "liftover," translates variant positions from one genome assembly to another while maintaining biological accuracy.
 
 ## CrossMap Integration ​
 

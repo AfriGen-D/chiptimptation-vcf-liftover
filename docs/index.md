@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: "chiptimptation-vcf-liftover"
+  name: "chiptimputation-vcf-liftover"
   text: "VCF Genome Build Liftover Pipeline"
   tagline: "A robust Nextflow pipeline for converting VCF files between genome builds using CrossMap"
   actions:
@@ -11,7 +11,7 @@ hero:
       link: /guide/getting-started
     - theme: alt
       text: View on GitHub
-      link: https://github.com/AfriGen-D/chiptimptation-vcf-liftover
+      link: https://github.com/AfriGen-D/chiptimputation-vcf-liftover
 
 features:
   - icon: 🔄
@@ -36,12 +36,12 @@ features:
 
 ## Quick Start ​
 
-Get started with chiptimptation-vcf-liftover in just a few commands:
+Get started with chiptimputation-vcf-liftover in just a few commands:
 
 ```bash
 # Clone the repository
-git clone https://github.com/AfriGen-D/chiptimptation-vcf-liftover.git
-cd chiptimptation-liftover
+git clone https://github.com/AfriGen-D/chiptimputation-vcf-liftover.git
+cd chiptimputation-liftover
 
 # Run with your data
 nextflow run main.nf \
@@ -51,7 +51,7 @@ nextflow run main.nf \
   -profile singularity
 ```
 
-## What chiptimptation-vcf-liftover Does ​
+## What chiptimputation-vcf-liftover Does ​
 
 This Nextflow pipeline provides:
 
@@ -77,6 +77,6 @@ This Nextflow pipeline provides:
 
 ## Support ​
 
-- [GitHub Issues](https://github.com/AfriGen-D/chiptimptation-vcf-liftover/issues)
+- [GitHub Issues](https://github.com/AfriGen-D/chiptimputation-vcf-liftover/issues)
 - [Helpdesk](https://afrigen-d.org)
 - [AfriGen-D](https://afrigen-d.org)

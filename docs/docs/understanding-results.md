@@ -1,6 +1,6 @@
 # Understanding Results ​
 
-Complete guide to interpreting chiptimptation-vcf-liftover output files, statistics, and validation reports.
+Complete guide to interpreting chiptimputation-vcf-liftover output files, statistics, and validation reports.
 
 ## Output Directory Structure ​
 

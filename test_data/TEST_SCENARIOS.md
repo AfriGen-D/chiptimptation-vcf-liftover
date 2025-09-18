@@ -1,4 +1,4 @@
-# Test Scenarios for chiptimptation-vcf-liftover
+# Test Scenarios for chiptimputation-vcf-liftover
 
 ## Generated Test Datasets
 

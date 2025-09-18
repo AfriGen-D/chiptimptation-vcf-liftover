@@ -1,6 +1,6 @@
 # Reference Overview ​
 
-Complete command-line reference for chiptimptation-vcf-liftover. This section provides comprehensive documentation for all parameters, profiles, and configuration options.
+Complete command-line reference for chiptimputation-vcf-liftover. This section provides comprehensive documentation for all parameters, profiles, and configuration options.
 
 ## Quick Reference ​
 

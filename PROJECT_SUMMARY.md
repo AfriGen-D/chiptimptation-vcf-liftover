@@ -1,4 +1,4 @@
-# chiptimptation-vcf-liftover Project Summary
+# chiptimputation-vcf-liftover Project Summary
 
 ## Overview
 
@@ -7,7 +7,7 @@ Successfully created a comprehensive Nextflow pipeline for VCF liftover between 
 ## Project Structure
 
 ```
-chiptimptation-vcf-liftover/
+chiptimputation-vcf-liftover/
 ├── main.nf                    # Main workflow entry point
 ├── nextflow.config           # Main configuration file
 ├── README.md                 # Comprehensive documentation
@@ -181,7 +181,7 @@ The pipeline generates a well-organized output structure:
 
 ## Conclusion
 
-The chiptimptation-vcf-liftover pipeline is a robust, production-ready solution for VCF coordinate liftover. It implements all features specified in the design document and follows Nextflow best practices for scalability, reproducibility, and maintainability.
+The chiptimputation-vcf-liftover pipeline is a robust, production-ready solution for VCF coordinate liftover. It implements all features specified in the design document and follows Nextflow best practices for scalability, reproducibility, and maintainability.
 
 The pipeline is ready for:
 - Research use with small to medium datasets

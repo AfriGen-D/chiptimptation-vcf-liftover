@@ -2,7 +2,7 @@
 
 /*
 ========================================================================================
-    chiptimptation-vcf-liftover
+    chiptimputation-vcf-liftover
 ========================================================================================
     Nextflow pipeline for lifting over VCF files between genome builds
     Author: Mamana Mbiyavanga
@@ -21,7 +21,7 @@ nextflow.enable.dsl = 2
 def helpMessage() {
     log.info"""
     =========================================
-     chiptimptation-vcf-liftover v${workflow.manifest.version}
+     chiptimputation-vcf-liftover v${workflow.manifest.version}
     =========================================
     
     Usage:
@@ -152,7 +152,7 @@ workflow {
 
     log.info """
     =========================================
-     chiptimptation-vcf-liftover v${workflow.manifest.version}
+     chiptimputation-vcf-liftover v${workflow.manifest.version}
     =========================================
     Input           : ${params.input}
     Chain file      : ${params.chain_file}

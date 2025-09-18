@@ -111,7 +111,7 @@ process LIFTOVER_STATS {
     <!DOCTYPE html>
     <html>
     <head>
-        <title>chiptimptation-vcf-liftover Summary Report</title>
+        <title>chiptimputation-vcf-liftover Summary Report</title>
         <style>
             body {{ font-family: Arial, sans-serif; margin: 40px; }}
             .header {{ background-color: #f0f0f0; padding: 20px; border-radius: 5px; }}
@@ -129,7 +129,7 @@ process LIFTOVER_STATS {
     </head>
     <body>
         <div class="header">
-            <h1>chiptimptation-vcf-liftover Summary Report</h1>
+            <h1>chiptimputation-vcf-liftover Summary Report</h1>
             <p><strong>Generated:</strong> {timestamp}</p>
             <p><strong>Source Build:</strong> {source_build}</p>
             <p><strong>Target Build:</strong> {target_build}</p>
@@ -266,7 +266,7 @@ process LIFTOVER_STATS {
     
     # Generate text statistics
     with open('liftover_statistics.txt', 'w') as f:
-        f.write("chiptimptation-vcf-liftover Statistics\\n")
+        f.write("chiptimputation-vcf-liftover Statistics\\n")
         f.write("=" * 50 + "\\n")
         f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\\n")
         f.write(f"Source Build: ${params.source_build}\\n")

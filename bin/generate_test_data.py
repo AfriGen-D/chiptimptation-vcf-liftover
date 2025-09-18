@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate comprehensive test data for chiptimptation-vcf-liftover pipeline
+Generate comprehensive test data for chiptimputation-vcf-liftover pipeline
 Creates realistic VCF files with various use cases and scenarios
 """
 
@@ -14,7 +14,7 @@ def create_vcf_header(sample_names, reference="hg19", contig_info=None):
     header = [
         "##fileformat=VCFv4.2",
         "##fileDate=" + datetime.now().strftime("%Y%m%d"),
-        "##source=chiptimptation-vcf-liftover-test-data-generator",
+        "##source=chiptimputation-vcf-liftover-test-data-generator",
         "##reference=" + reference,
         "##INFO=<ID=AC,Number=A,Type=Integer,Description=\"Allele count in genotypes\">",
         "##INFO=<ID=AF,Number=A,Type=Float,Description=\"Allele Frequency\">",
@@ -102,7 +102,7 @@ def create_test_vcf(filename, variants_data, sample_names, reference="hg19", com
 def main():
     """Generate comprehensive test datasets"""
 
-    print("Generating comprehensive test data for chiptimptation-vcf-liftover...")
+    print("Generating comprehensive test data for chiptimputation-vcf-liftover...")
 
     # Ensure test_data directory exists
     import os
@@ -202,7 +202,7 @@ def main():
     
     # Create test scenarios documentation
     with open("test_data/TEST_SCENARIOS.md", "w") as f:
-        f.write("""# Test Scenarios for chiptimptation-vcf-liftover
+        f.write("""# Test Scenarios for chiptimputation-vcf-liftover
 
 ## Generated Test Datasets
 

@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# chiptimptation-vcf-liftover Pipeline Test Script
+# chiptimputation-vcf-liftover Pipeline Test Script
 # =================================================
 # This script tests the pipeline functionality with various configurations
 
 set -e  # Exit on any error
 
 echo "=========================================="
-echo " chiptimptation-vcf-liftover Test Suite"
+echo " chiptimputation-vcf-liftover Test Suite"
 echo "=========================================="
 
 # Colors for output
@@ -211,7 +211,7 @@ echo " Test Summary"
 echo "=========================================="
 print_status "PASS" "All basic tests completed successfully!"
 echo ""
-echo "The chiptimptation-vcf-liftover pipeline appears to be properly set up."
+echo "The chiptimputation-vcf-liftover pipeline appears to be properly set up."
 echo ""
 echo "Next steps:"
 echo "1. Run a full test: nextflow run main.nf -profile test,singularity"

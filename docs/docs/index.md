@@ -1,10 +1,10 @@
-# chiptimptation-vcf-liftover Documentation ​
+# chiptimputation-vcf-liftover Documentation ​
 
-Comprehensive documentation for the chiptimptation-vcf-liftover pipeline - your complete reference for understanding, configuring, and troubleshooting VCF liftover analyses.
+Comprehensive documentation for the chiptimputation-vcf-liftover pipeline - your complete reference for understanding, configuring, and troubleshooting VCF liftover analyses.
 
 ## Overview ​
 
-chiptimptation-vcf-liftover is a Nextflow pipeline that converts genomic coordinates between reference genome builds (hg19 to hg38) using CrossMap. This documentation provides detailed information about every aspect of the pipeline usage.
+chiptimputation-vcf-liftover is a Nextflow pipeline that converts genomic coordinates between reference genome builds (hg19 to hg38) using CrossMap. This documentation provides detailed information about every aspect of the pipeline usage.
 
 ## Documentation Sections ​
 
@@ -27,7 +27,7 @@ chiptimptation-vcf-liftover is a Nextflow pipeline that converts genomic coordin
 
 ### Automated Validation ​
 
-chiptimptation-vcf-liftover now includes built-in validation for liftover results:
+chiptimputation-vcf-liftover now includes built-in validation for liftover results:
 
 - Automatic quality assessment during coordinate conversion
 - Liftover success rate validation to detect conversion issues
@@ -53,7 +53,7 @@ chiptimptation-vcf-liftover now includes built-in validation for liftover result
 
 ### Use Tutorials when you want to:
 
-- Get started quickly with chiptimptation-vcf-liftover
+- Get started quickly with chiptimputation-vcf-liftover
 - Follow step-by-step workflows
 - Learn specific techniques
 - Practice with guided examples
@@ -71,7 +71,7 @@ Each documentation page provides:
 
 ## Getting Started with Documentation ​
 
-If you're new to chiptimptation-vcf-liftover documentation:
+If you're new to chiptimputation-vcf-liftover documentation:
 
 1. Start with [Understanding Results](/docs/understanding-results) - Learn how to interpret liftover output
 2. Review [Liftover Methods](/docs/liftover-methods) - Understand your conversion options
@@ -92,7 +92,7 @@ If you're new to chiptimptation-vcf-liftover documentation:
 
 Found an issue or want to improve the documentation?
 
-- Visit our [GitHub repository](https://github.com/AfriGen-D/chiptimptation-vcf-liftover)
+- Visit our [GitHub repository](https://github.com/AfriGen-D/chiptimputation-vcf-liftover)
 - Submit issues or suggestions
 - Contact [AfriGen-D](https://afrigen-d.org)
 

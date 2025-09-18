@@ -1,6 +1,6 @@
 # Parameters Reference
 
-Complete reference for all pipeline parameters in chiptimptation-vcf-liftover.
+Complete reference for all pipeline parameters in chiptimputation-vcf-liftover.
 
 ## Input/Output Parameters
 

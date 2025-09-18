@@ -1,6 +1,6 @@
 # Configuration Guide ​
 
-Complete guide for configuring chiptimptation-vcf-liftover with your reference files and system settings.
+Complete guide for configuring chiptimputation-vcf-liftover with your reference files and system settings.
 
 ## Quick Setup ​
 

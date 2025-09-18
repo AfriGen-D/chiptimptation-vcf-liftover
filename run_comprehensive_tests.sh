@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Comprehensive Test Suite for chiptimptation-vcf-liftover Pipeline
+# Comprehensive Test Suite for chiptimputation-vcf-liftover Pipeline
 # Tests all generated test datasets with various scenarios
 
 set -e  # Exit on any error
@@ -16,7 +16,7 @@ NC='\033[0m' # No Color
 PROFILE="test,singularity"
 TARGET_FASTA="/cbio/dbs/references/GRCh38_reference_genome/GRCh38_full_analysis_set_plus_decoy_hla.fa"
 VALIDATE_OUTPUT="false"
-BASE_PATH="/users/mamana/chiptimptation-liftover"
+BASE_PATH="/users/mamana/chiptimputation-liftover"
 
 # Counters
 TOTAL_TESTS=0
@@ -166,7 +166,7 @@ check_prerequisites() {
 # Main test execution
 main() {
     echo "========================================"
-    echo "chiptimptation-vcf-liftover Test Suite"
+    echo "chiptimputation-vcf-liftover Test Suite"
     echo "========================================"
     echo "Started: $(date)"
     echo ""
@@ -247,7 +247,7 @@ main() {
     if [ $FAILED_TESTS -eq 0 ]; then
         print_status "SUCCESS" "🎉 ALL TESTS PASSED!"
         echo ""
-        print_status "INFO" "The chiptimptation-vcf-liftover pipeline is working correctly"
+        print_status "INFO" "The chiptimputation-vcf-liftover pipeline is working correctly"
         print_status "INFO" "with all test scenarios and input formats."
         exit 0
     else

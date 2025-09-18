@@ -22,7 +22,7 @@ A comprehensive Nextflow pipeline for lifting over VCF files between genome buil
 ## Pipeline Structure
 
 ```
-chiptimptation-liftover/
+chiptimputation-liftover/
 ├── main.nf                    # Main workflow entry point
 ├── nextflow.config           # Main configuration file
 ├── conf/                     # Environment-specific configurations

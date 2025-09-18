@@ -9,7 +9,8 @@
 ## What You'll Learn ​
 
 By the end of this tutorial, you'll be able to:
-- Run chiptimptation-vcf-liftover with test data
+
+- Run chiptimputation-vcf-liftover with test data
 - Understand basic command structure
 - Interpret liftover results
 - Identify successful coordinate conversion
@@ -20,8 +21,8 @@ By the end of this tutorial, you'll be able to:
 
 ```bash
 # Clone the repository
-git clone https://github.com/AfriGen-D/chiptimptation-vcf-liftover.git
-cd chiptimptation-vcf-liftover
+git clone https://github.com/AfriGen-D/chiptimputation-vcf-liftover.git
+cd chiptimputation-vcf-liftover
 
 # Verify you're in the right directory
 ls -la
@@ -125,15 +126,15 @@ If you need to download test data separately:
 
 ```bash
 # Download test VCF files
-wget -P test_data/ https://github.com/AfriGen-D/chiptimptation-vcf-liftover/raw/main/test_data/small_chr22.vcf.gz
-wget -P test_data/ https://github.com/AfriGen-D/chiptimptation-vcf-liftover/raw/main/test_data/medium_multi_chr.vcf.gz
+wget -P test_data/ https://github.com/AfriGen-D/chiptimputation-vcf-liftover/raw/main/test_data/small_chr22.vcf.gz
+wget -P test_data/ https://github.com/AfriGen-D/chiptimputation-vcf-liftover/raw/main/test_data/medium_multi_chr.vcf.gz
 
 # Download test reference
-wget -P test_data/ https://github.com/AfriGen-D/chiptimptation-vcf-liftover/raw/main/test_data/GRCh38_test_regions.fa
-wget -P test_data/ https://github.com/AfriGen-D/chiptimptation-vcf-liftover/raw/main/test_data/GRCh38_test_regions.fa.fai
+wget -P test_data/ https://github.com/AfriGen-D/chiptimputation-vcf-liftover/raw/main/test_data/GRCh38_test_regions.fa
+wget -P test_data/ https://github.com/AfriGen-D/chiptimputation-vcf-liftover/raw/main/test_data/GRCh38_test_regions.fa.fai
 
 # Download CSV batch files
-wget -P test_data/ https://github.com/AfriGen-D/chiptimptation-vcf-liftover/raw/main/test_data/samples.csv
+wget -P test_data/ https://github.com/AfriGen-D/chiptimputation-vcf-liftover/raw/main/test_data/samples.csv
 ```
 
 **Available test files:**
@@ -338,7 +339,7 @@ This is normal for test data! Real genomic data typically achieves >95% success 
 
 ## What You've Accomplished ​
 
-✅ **Successfully ran chiptimptation-vcf-liftover**  
+✅ **Successfully ran chiptimputation-vcf-liftover**
 ✅ **Converted coordinates from hg19 to hg38**  
 ✅ **Generated quality control reports**  
 ✅ **Understood basic pipeline workflow**  

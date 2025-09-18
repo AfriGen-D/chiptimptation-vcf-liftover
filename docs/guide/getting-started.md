@@ -1,6 +1,6 @@
 # Getting Started
 
-chiptimptation-vcf-liftover is a Nextflow pipeline designed for converting VCF files between genome builds using CrossMap. This guide will help you get up and running with the pipeline.
+chiptimputation-vcf-liftover is a Nextflow pipeline designed for converting VCF files between genome builds using CrossMap. This guide will help you get up and running with the pipeline.
 
 ## Prerequisites
 
@@ -28,8 +28,8 @@ sudo mv nextflow /usr/local/bin/
 ### 2. Clone the Pipeline
 
 ```bash
-git clone https://github.com/AfriGen-D/chiptimptation-vcf-liftover.git
-cd chiptimptation-vcf-liftover
+git clone https://github.com/AfriGen-D/chiptimputation-vcf-liftover.git
+cd chiptimputation-vcf-liftover
 ```
 
 ### 3. Test the Installation
@@ -58,6 +58,6 @@ nextflow run main.nf -profile test,singularity \
 If you encounter any issues:
 
 1. Check the [troubleshooting guide](/guide/troubleshooting)
-2. Search existing [GitHub issues](https://github.com/AfriGen-D/chiptimptation-vcf-liftover/issues)
+2. Search existing [GitHub issues](https://github.com/AfriGen-D/chiptimputation-vcf-liftover/issues)
 3. Create a new issue with details about your problem
 4. Contact the AfriGen-D team at [AfriGen-D](https://afrigen-d.org)

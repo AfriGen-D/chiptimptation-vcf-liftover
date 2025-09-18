@@ -1,6 +1,6 @@
-# chiptimptation-vcf-liftover Documentation
+# chiptimputation-vcf-liftover Documentation
 
-This directory contains the documentation for the chiptimptation-vcf-liftover pipeline, built using VitePress.
+This directory contains the documentation for the chiptimputation-vcf-liftover pipeline, built using VitePress.
 
 ## 🚀 Quick Start
 
@@ -50,6 +50,6 @@ To contribute to the documentation:
 
 ## 🔗 Links
 
-- **Live Documentation**: <https://afrigen-d.github.io/chiptimptation-vcf-liftover>
-- **Repository**: <https://github.com/AfriGen-D/chiptimptation-vcf-liftover>
+- **Live Documentation**: <https://afrigen-d.github.io/chiptimputation-vcf-liftover>
+- **Repository**: <https://github.com/AfriGen-D/chiptimputation-vcf-liftover>
 - **VitePress**: https://vitepress.dev

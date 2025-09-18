@@ -1,6 +1,6 @@
 # Execution Profiles ​
 
-chiptimptation-vcf-liftover provides multiple execution profiles to support different computing environments and container technologies.
+chiptimputation-vcf-liftover provides multiple execution profiles to support different computing environments and container technologies.
 
 ## Available Profiles ​
 
@@ -244,7 +244,7 @@ profiles {
     process {
       executor = 'awsbatch'
       queue = 'genomics-queue'
-      container = 'your-ecr-repo/chiptimptation-liftover'
+      container = 'your-ecr-repo/chiptimputation-liftover'
     }
     
     aws {
