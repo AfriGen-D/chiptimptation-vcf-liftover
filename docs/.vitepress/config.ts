@@ -21,23 +21,69 @@ export default defineConfig({
   ],
 
   themeConfig: {
-    logo: { src: '/logo.png', width: 32, height: 32 },
+    logo: {
+      src: '/logo.png',
+      width: 40,
+      height: 40,
+      alt: 'AfriGen-D ChipTimputation VCF Liftover'
+    },
     siteTitle: 'ChipTimputation VCF Liftover',
 
+    // Add announcement banner
+    announcement: {
+      title: '🎉 New Quick Start Tutorial Available!',
+      details: 'Get started with VCF liftover in just 10 minutes',
+      link: '/tutorials/quick-start'
+    },
+
     nav: [
-      { text: 'Home', link: '/' },
+      { text: 'Home', link: '/', activeMatch: '^/$' },
       {
         text: 'Get Started',
+        activeMatch: '^/(guide|tutorials)/',
         items: [
-          { text: 'Quick Start', link: '/tutorials/quick-start' },
-          { text: 'Installation', link: '/guide/installation' },
-          { text: 'Configuration', link: '/guide/configuration' }
+          {
+            text: '🚀 Quick Start (10 min)',
+            link: '/tutorials/quick-start',
+            target: '_self'
+          },
+          {
+            text: '⚙️ Installation Guide',
+            link: '/guide/installation',
+            target: '_self'
+          },
+          {
+            text: '🔧 Configuration',
+            link: '/guide/configuration',
+            target: '_self'
+          },
+          {
+            text: '📋 Requirements',
+            link: '/guide/getting-started',
+            target: '_self'
+          }
         ]
       },
-      { text: 'Documentation', link: '/docs/' },
-      { text: 'Reference', link: '/reference/' },
-      { text: 'Tutorials', link: '/tutorials/' },
-      { text: 'Examples', link: '/examples/' }
+      {
+        text: 'Documentation',
+        link: '/docs/',
+        activeMatch: '^/docs/'
+      },
+      {
+        text: 'Reference',
+        link: '/reference/',
+        activeMatch: '^/reference/'
+      },
+      {
+        text: 'Tutorials',
+        link: '/tutorials/',
+        activeMatch: '^/tutorials/'
+      },
+      {
+        text: 'Examples',
+        link: '/examples/',
+        activeMatch: '^/examples/'
+      }
     ],
 
     sidebar: {
