@@ -2,36 +2,42 @@
 layout: home
 
 hero:
-  name: "chiptimputation-vcf-liftover"
-  text: "VCF Genome Build Liftover Pipeline"
-  tagline: "A robust Nextflow pipeline for converting VCF files between genome builds using CrossMap"
+  name: "ChipTimputation VCF Liftover"
+  text: "Genomic Coordinate Conversion Pipeline"
+  tagline: "A robust, production-ready Nextflow pipeline for converting VCF files between genome builds using CrossMap • Developed by AfriGen-D"
+  image:
+    src: /logo.png
+    alt: ChipTimputation VCF Liftover
   actions:
     - theme: brand
-      text: Get Started
-      link: /guide/getting-started
+      text: Quick Start →
+      link: /tutorials/quick-start
+    - theme: alt
+      text: Documentation
+      link: /docs/
     - theme: alt
       text: View on GitHub
       link: https://github.com/AfriGen-D/chiptimputation-vcf-liftover
 
 features:
-  - icon: 🔄
-    title: Genome Build Conversion
-    details: Automatically converts genomic coordinates between reference builds (hg19 to hg38) with high accuracy.
   - icon: 🧬
-    title: CrossMap Integration
-    details: Uses CrossMap for precise coordinate conversion with comprehensive chain file support.
-  - icon: 📊
-    title: Multi-File Processing
-    details: Process multiple VCF files simultaneously with automatic batch handling and CSV input support.
-  - icon: 🧪
-    title: Quality Validation
-    details: Built-in validation with detailed statistics, success rates, and comprehensive error reporting.
+    title: Precise Genome Build Conversion
+    details: Seamlessly converts genomic coordinates between reference builds (hg19 ↔ hg38) with industry-leading accuracy using CrossMap.
   - icon: ⚡
-    title: Fast & Scalable
-    details: Parallel processing with Nextflow for efficient analysis of large genomic datasets.
-  - icon: 📋
-    title: Comprehensive QC
-    details: Detailed reports and quality metrics to validate your liftover results.
+    title: Production-Ready Nextflow
+    details: Built with Nextflow DSL2 for scalable, reproducible workflows with automatic resource management and error handling.
+  - icon: 📊
+    title: High-Throughput Processing
+    details: Process thousands of VCF files simultaneously with intelligent batching, CSV input support, and parallel execution.
+  - icon: 🔬
+    title: Comprehensive Quality Control
+    details: Built-in validation, detailed statistics, success rate tracking, and comprehensive error reporting for reliable results.
+  - icon: 🐳
+    title: Container-Ready Deployment
+    details: Full Docker/Singularity support with pre-built containers for reproducible execution across any computing environment.
+  - icon: 📚
+    title: Complete Documentation
+    details: Extensive tutorials, examples, and reference materials with step-by-step guides for researchers and bioinformaticians.
 ---
 
 ## Quick Start ​
