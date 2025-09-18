@@ -12,6 +12,11 @@ docs/node_modules/
 # Test data generation
 test_data_generation/
 
+# Development - ignore generated test files but keep structure
+dev_docs/test_data/*.vcf.gz.tbi
+dev_docs/test_data/*.fa.fai
+dev_docs/test_data/temp_*
+
 # IDE
 .vscode/
 .idea/
