@@ -24,6 +24,25 @@ nextflow run main.nf \
     -profile singularity
 ```
 
+## Project Structure
+
+```
+chiptimputation-vcf-liftover/
+├── main.nf                 # Main pipeline script
+├── nextflow.config         # Pipeline configuration
+├── modules/                # Process modules
+├── workflows/              # Workflow definitions
+├── conf/                   # Configuration profiles
+├── bin/                    # Utility scripts
+├── assets/                 # Pipeline assets
+├── chains/                 # Chain files for liftover
+├── docs/                   # User documentation
+└── dev_docs/               # Development documentation & tests
+    ├── test_data/          # Test datasets
+    ├── test_pipeline.sh    # Test scripts
+    └── PROJECT_SUMMARY.md  # Technical documentation
+```
+
 ## Documentation
 
 📖 **Complete documentation is available at: [https://afrigen-d.github.io/chiptimputation-vcf-liftover](https://afrigen-d.github.io/chiptimputation-vcf-liftover)**

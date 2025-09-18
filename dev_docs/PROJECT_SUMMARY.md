@@ -10,11 +10,8 @@ Successfully created a comprehensive Nextflow pipeline for VCF liftover between 
 chiptimputation-vcf-liftover/
 ├── main.nf                    # Main workflow entry point
 ├── nextflow.config           # Main configuration file
-├── README.md                 # Comprehensive documentation
+├── README.md                 # User documentation
 ├── LICENSE                   # MIT License
-├── design.md                 # Original design document
-├── PROJECT_SUMMARY.md        # This summary
-├── test_pipeline.sh          # Validation test script
 ├── conf/                     # Environment-specific configurations
 │   ├── base.config          # Base resource requirements
 │   ├── singularity.config   # Singularity-specific settings
@@ -39,7 +36,14 @@ chiptimputation-vcf-liftover/
 │   ├── README.md            # Main documentation
 │   ├── usage.md             # Usage examples
 │   └── parameters.md        # Parameter descriptions
-├── test_data/               # Sample test data
+├── docs/                    # User documentation (VitePress)
+├── dev_docs/                # Development documentation & tests
+│   ├── README.md            # Development guide
+│   ├── design.md            # Original design document
+│   ├── PROJECT_SUMMARY.md   # This summary
+│   ├── test_pipeline.sh     # Validation test script
+│   ├── run_comprehensive_tests.sh # Full test suite
+│   └── test_data/           # Sample test data
 │   ├── samples.csv          # Test input CSV
 │   ├── sample1.vcf.gz       # Test VCF files
 │   ├── sample2.vcf.gz

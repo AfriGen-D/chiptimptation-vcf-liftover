@@ -106,7 +106,7 @@ def main():
 
     # Ensure test_data directory exists
     import os
-    os.makedirs("test_data", exist_ok=True)
+    os.makedirs("dev_docs/test_data", exist_ok=True)
 
     # Test Case 1: Small dataset with known coordinates (chr22)
     print("1. Creating small test dataset (chr22)...")
@@ -117,7 +117,7 @@ def main():
         ("22", 16200000, "T", "C"),
         ("22", 16250000, "G", "T"),
     ]
-    create_test_vcf("test_data/small_chr22.vcf.gz", small_variants, ["SAMPLE1", "SAMPLE2"])
+    create_test_vcf("dev_docs/test_data/small_chr22.vcf.gz", small_variants, ["SAMPLE1", "SAMPLE2"])
     
     # Test Case 2: Medium dataset with multiple chromosomes
     print("2. Creating medium multi-chromosome dataset...")
@@ -129,7 +129,7 @@ def main():
             alt = random.choice([x for x in ["A", "C", "G", "T"] if x != ref])
             medium_variants.append((chrom, pos, ref, alt))
     
-    create_test_vcf("test_data/medium_multi_chr.vcf.gz", medium_variants,
+    create_test_vcf("dev_docs/test_data/medium_multi_chr.vcf.gz", medium_variants,
                    ["SAMPLE1", "SAMPLE2", "SAMPLE3"])
     
     # Test Case 3: Large single sample dataset
@@ -141,7 +141,7 @@ def main():
         alt = random.choice([x for x in ["A", "C", "G", "T"] if x != ref])
         large_variants.append(("22", pos, ref, alt))
     
-    create_test_vcf("test_data/large_single_sample.vcf.gz", large_variants, ["SAMPLE1"])
+    create_test_vcf("dev_docs/test_data/large_single_sample.vcf.gz", large_variants, ["SAMPLE1"])
     
     # Test Case 4: Population dataset with many samples
     print("4. Creating population dataset...")
@@ -153,7 +153,7 @@ def main():
         pop_variants.append(("22", pos, ref, alt))
     
     sample_names = [f"SAMPLE{i:03d}" for i in range(1, 21)]
-    create_test_vcf("test_data/population_20samples.vcf.gz", pop_variants, sample_names)
+    create_test_vcf("dev_docs/test_data/population_20samples.vcf.gz", pop_variants, sample_names)
     
     # Test Case 5: Edge cases dataset
     print("5. Creating edge cases dataset...")
@@ -164,7 +164,7 @@ def main():
         ("22", 16600000, "G", "GA"), # Insertion
         ("22", 16700000, "CAT", "C"), # Complex deletion
     ]
-    create_test_vcf("test_data/edge_cases.vcf.gz", edge_variants, ["SAMPLE1"])
+    create_test_vcf("dev_docs/test_data/edge_cases.vcf.gz", edge_variants, ["SAMPLE1"])
     
     # Test Case 6: Multi-allelic variants
     print("6. Creating multi-allelic dataset...")
@@ -176,32 +176,32 @@ def main():
         ("22", 16400000, "C", "T"),
         ("22", 16500000, "A", "G"),
     ]
-    create_test_vcf("test_data/multiallelic.vcf.gz", multiallelic_variants, ["SAMPLE1", "SAMPLE2"])
+    create_test_vcf("dev_docs/test_data/multiallelic.vcf.gz", multiallelic_variants, ["SAMPLE1", "SAMPLE2"])
     
     # Create CSV files for batch processing tests
     print("7. Creating CSV batch files...")
     
     # Single sample CSV
-    with open("test_data/single_sample.csv", "w") as f:
+    with open("dev_docs/test_data/single_sample.csv", "w") as f:
         f.write("sample_id,vcf_path\n")
-        f.write("small_chr22,test_data/small_chr22.vcf.gz\n")
+        f.write("small_chr22,dev_docs/test_data/small_chr22.vcf.gz\n")
 
     # Multiple samples CSV
-    with open("test_data/multiple_samples.csv", "w") as f:
+    with open("dev_docs/test_data/multiple_samples.csv", "w") as f:
         f.write("sample_id,vcf_path\n")
-        f.write("small_chr22,test_data/small_chr22.vcf.gz\n")
-        f.write("medium_multi,test_data/medium_multi_chr.vcf.gz\n")
-        f.write("large_single,test_data/large_single_sample.vcf.gz\n")
+        f.write("small_chr22,dev_docs/test_data/small_chr22.vcf.gz\n")
+        f.write("medium_multi,dev_docs/test_data/medium_multi_chr.vcf.gz\n")
+        f.write("large_single,dev_docs/test_data/large_single_sample.vcf.gz\n")
 
     # Population study CSV
-    with open("test_data/population_study.csv", "w") as f:
+    with open("dev_docs/test_data/population_study.csv", "w") as f:
         f.write("sample_id,vcf_path\n")
-        f.write("population_20,test_data/population_20samples.vcf.gz\n")
-        f.write("edge_cases,test_data/edge_cases.vcf.gz\n")
-        f.write("multiallelic,test_data/multiallelic.vcf.gz\n")
+        f.write("population_20,dev_docs/test_data/population_20samples.vcf.gz\n")
+        f.write("edge_cases,dev_docs/test_data/edge_cases.vcf.gz\n")
+        f.write("multiallelic,dev_docs/test_data/multiallelic.vcf.gz\n")
     
     # Create test scenarios documentation
-    with open("test_data/TEST_SCENARIOS.md", "w") as f:
+    with open("dev_docs/test_data/TEST_SCENARIOS.md", "w") as f:
         f.write("""# Test Scenarios for chiptimputation-vcf-liftover
 
 ## Generated Test Datasets
@@ -210,49 +210,49 @@ def main():
 - **Purpose**: Quick testing and validation
 - **Variants**: 5 variants on chromosome 22
 - **Samples**: 2 samples
-- **Use case**: `--input test_data/small_chr22.vcf.gz`
+- **Use case**: `--input dev_docs/test_data/small_chr22.vcf.gz`
 
 ### 2. Medium Multi-chromosome (medium_multi_chr.vcf.gz)
 - **Purpose**: Test multi-chromosome processing
 - **Variants**: 20 variants across chromosomes 21-22
 - **Samples**: 3 samples
-- **Use case**: `--input test_data/medium_multi_chr.vcf.gz`
+- **Use case**: `--input dev_docs/test_data/medium_multi_chr.vcf.gz`
 
 ### 3. Large Single Sample (large_single_sample.vcf.gz)
 - **Purpose**: Performance testing with many variants
 - **Variants**: 100 variants on chromosome 22
 - **Samples**: 1 sample
-- **Use case**: `--input test_data/large_single_sample.vcf.gz`
+- **Use case**: `--input dev_docs/test_data/large_single_sample.vcf.gz`
 
 ### 4. Population Dataset (population_20samples.vcf.gz)
 - **Purpose**: Test with many samples
 - **Variants**: 20 variants on chromosome 22
 - **Samples**: 20 samples
-- **Use case**: `--input test_data/population_20samples.vcf.gz`
+- **Use case**: `--input dev_docs/test_data/population_20samples.vcf.gz`
 
 ### 5. Edge Cases (edge_cases.vcf.gz)
 - **Purpose**: Test complex variants and edge positions
 - **Variants**: 5 variants including indels
 - **Samples**: 1 sample
 - **Features**: Insertions, deletions, complex variants
-- **Use case**: `--input test_data/edge_cases.vcf.gz`
+- **Use case**: `--input dev_docs/test_data/edge_cases.vcf.gz`
 
 ### 6. Multi-allelic (multiallelic.vcf.gz)
 - **Purpose**: Test multi-allelic variant handling
 - **Variants**: 4 variants with overlapping positions
 - **Samples**: 2 samples
-- **Use case**: `--input test_data/multiallelic.vcf.gz`
+- **Use case**: `--input dev_docs/test_data/multiallelic.vcf.gz`
 
 ## Batch Processing Tests
 
 ### CSV Input Tests
-1. **Single sample**: `--input test_data/single_sample.csv`
-2. **Multiple samples**: `--input test_data/multiple_samples.csv`
-3. **Population study**: `--input test_data/population_study.csv`
+1. **Single sample**: `--input dev_docs/test_data/single_sample.csv`
+2. **Multiple samples**: `--input dev_docs/test_data/multiple_samples.csv`
+3. **Population study**: `--input dev_docs/test_data/population_study.csv`
 
 ### Wildcard Tests
-1. **All VCF files**: `--input "test_data/*.vcf.gz"`
-2. **Specific pattern**: `--input "test_data/small_*.vcf.gz"`
+1. **All VCF files**: `--input "dev_docs/test_data/*.vcf.gz"`
+2. **Specific pattern**: `--input "dev_docs/test_data/small_*.vcf.gz"`
 
 ## Performance Benchmarks
 
@@ -268,22 +268,22 @@ def main():
 
 ```bash
 # Quick test
-./nextflow run main.nf -profile test,singularity --input test_data/small_chr22.vcf.gz
+./nextflow run main.nf -profile test,singularity --input dev_docs/test_data/small_chr22.vcf.gz
 
 # Multi-chromosome test
-./nextflow run main.nf -profile test,singularity --input test_data/medium_multi_chr.vcf.gz
+./nextflow run main.nf -profile test,singularity --input dev_docs/test_data/medium_multi_chr.vcf.gz
 
 # Performance test
-./nextflow run main.nf -profile test,singularity --input test_data/large_single_sample.vcf.gz
+./nextflow run main.nf -profile test,singularity --input dev_docs/test_data/large_single_sample.vcf.gz
 
 # Population test
-./nextflow run main.nf -profile test,singularity --input test_data/population_20samples.vcf.gz
+./nextflow run main.nf -profile test,singularity --input dev_docs/test_data/population_20samples.vcf.gz
 
 # Batch processing test
-./nextflow run main.nf -profile test,singularity --input test_data/multiple_samples.csv
+./nextflow run main.nf -profile test,singularity --input dev_docs/test_data/multiple_samples.csv
 
 # Wildcard test
-./nextflow run main.nf -profile test,singularity --input "test_data/small_*.vcf.gz"
+./nextflow run main.nf -profile test,singularity --input "dev_docs/test_data/small_*.vcf.gz"
 ```
 """)
     

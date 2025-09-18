@@ -95,7 +95,7 @@ def main():
                        default='/cbio/dbs/references/GRCh38_reference_genome/GRCh38_full_analysis_set_plus_decoy_hla.fa',
                        help='Input GRCh38 FASTA file')
     parser.add_argument('--output', '-o',
-                       default='test_data/GRCh38_test_reference.fa',
+                       default='dev_docs/test_data/GRCh38_test_reference.fa',
                        help='Output test FASTA file')
     parser.add_argument('--chromosomes', '-c',
                        default='chr21,chr22',

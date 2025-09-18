@@ -1,0 +1,2 @@
+sample_id,vcf_path
+small_chr22,dev_docs/test_data/small_chr22.vcf.gz

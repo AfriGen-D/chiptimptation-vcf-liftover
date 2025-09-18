@@ -16,7 +16,7 @@ NC='\033[0m' # No Color
 PROFILE="test,singularity"
 TARGET_FASTA="/cbio/dbs/references/GRCh38_reference_genome/GRCh38_full_analysis_set_plus_decoy_hla.fa"
 VALIDATE_OUTPUT="false"
-BASE_PATH="/users/mamana/chiptimputation-liftover"
+BASE_PATH="/users/mamana/chiptimptation-liftover"
 
 # Counters
 TOTAL_TESTS=0
@@ -60,7 +60,7 @@ run_test() {
     rm -rf test_results/ work/ .nextflow*
     
     # Convert relative paths to absolute paths
-    if [[ "$input_param" == test_data/* ]]; then
+    if [[ "$input_param" == dev_docs/test_data/* ]]; then
         input_param="$BASE_PATH/$input_param"
     fi
 
@@ -108,15 +108,15 @@ verify_test_data() {
     print_status "INFO" "Verifying test data exists..."
     
     local required_files=(
-        "test_data/small_chr22.vcf.gz"
-        "test_data/medium_multi_chr.vcf.gz"
-        "test_data/large_single_sample.vcf.gz"
-        "test_data/population_20samples.vcf.gz"
-        "test_data/edge_cases.vcf.gz"
-        "test_data/multiallelic.vcf.gz"
-        "test_data/single_sample.csv"
-        "test_data/multiple_samples.csv"
-        "test_data/population_study.csv"
+        "dev_docs/test_data/small_chr22.vcf.gz"
+        "dev_docs/test_data/medium_multi_chr.vcf.gz"
+        "dev_docs/test_data/large_single_sample.vcf.gz"
+        "dev_docs/test_data/population_20samples.vcf.gz"
+        "dev_docs/test_data/edge_cases.vcf.gz"
+        "dev_docs/test_data/multiallelic.vcf.gz"
+        "dev_docs/test_data/single_sample.csv"
+        "dev_docs/test_data/multiple_samples.csv"
+        "dev_docs/test_data/population_study.csv"
     )
     
     local missing_files=()
@@ -152,7 +152,7 @@ check_prerequisites() {
     if [ ! -f "$TARGET_FASTA" ]; then
         print_status "WARNING" "Target FASTA not found: $TARGET_FASTA"
         print_status "INFO" "Using default small reference"
-        TARGET_FASTA="test_data/hg38_chr22.fa"
+        TARGET_FASTA="dev_docs/test_data/hg38_chr22.fa"
     fi
     
     # Check if bc is available for calculations

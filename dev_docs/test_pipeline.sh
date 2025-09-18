@@ -79,7 +79,7 @@ required_files=(
     "modules/input_check.nf"
     "conf/singularity.config"
     "conf/test.config"
-    "test_data/samples.csv"
+    "dev_docs/test_data/samples.csv"
     "bin/check_vcf.py"
     "bin/generate_stats.py"
 )
@@ -106,8 +106,8 @@ fi
 # Test 4: Check test data
 print_status "INFO" "Checking test data..."
 
-if [[ -f "test_data/samples.csv" ]]; then
-    sample_count=$(tail -n +2 test_data/samples.csv | wc -l)
+if [[ -f "dev_docs/test_data/samples.csv" ]]; then
+    sample_count=$(tail -n +2 dev_docs/test_data/samples.csv | wc -l)
     print_status "PASS" "Test samples CSV found with $sample_count samples"
 else
     print_status "FAIL" "Test samples CSV not found"
@@ -124,7 +124,7 @@ while IFS=, read -r sample_id vcf_path; do
             exit 1
         fi
     fi
-done < test_data/samples.csv
+done < dev_docs/test_data/samples.csv
 
 # Test 5: Pipeline syntax validation
 print_status "INFO" "Validating pipeline with test profile..."
